@@ -7,6 +7,7 @@ import org.springframework.stereotype.Service;
 
 import java.util.ArrayList;
 import java.util.Collection;
+import java.util.Collections;
 import java.util.List;
 
 @Service
@@ -22,7 +23,7 @@ public class SearchService {
     public Collection<ProductItem> search(String query) {
         /*
          * This is a simple implementation that loops over all the items and does the filtering in Java.
-         * A better implementation would do most if not all of the filtering in a query and then finalize or
+         * A better implementation would do most if not all the filtering in a query and then finalize or
          * rank the results in Java.  From the SearchControllerSpec, we need to meet the following requirements:
          *   1. query can be contained within either the name or description of the item
          *   2. query string is treated as case-insensitive meaning Hi will match hi, hI, Hi, or HI
@@ -69,6 +70,6 @@ public class SearchService {
             }
         }
         // Return results
-        return itemList;
+        return Collections.emptyList();
     }
 }
